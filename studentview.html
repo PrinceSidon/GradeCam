@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <title>Student View Page</title>
+  <head>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/profview.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="prof-title">Student View</div>
+    <div class="prof-block">
+      <div class="prof-text">Please Upload Your Answer Key</div>
+      <input class="choose-file" type="file" />
+      <button class="prof-submit" type="submit">Submit</button>
+
+      <p class="thanks" style="display: none">
+        Thank you for submitting the answer. We will check them using the professor's answer key and grade it for you.
+      </p>
+      <br />
+      <a href="index.html" class="return" style="display: none"
+        >Return to Login</a
+      >
+    </div>
+
+    <script>
+      let professortext = document.querySelector(".prof-text");
+      let choosingfile = document.querySelector(".choose-file");
+      let submttingfile = document.querySelector(".prof-submit");
+      let whitebackground = document.querySelector(".prof-block");
+      let goreturn = document.querySelector(".return");
+
+      let thankyoutext = document.querySelector("p");
+      let button = document.querySelector(".prof-submit");
+      button.addEventListener("click", (e) => {
+        professortext.style.display = "none";
+        thankyoutext.style.display = "inline";
+        choosingfile.style.display = "none";
+        submttingfile.style.display = "none";
+        button.style.display = "none";
+        whitebackground.style.backgroundColor = "transparent";
+        goreturn.style.display = "inline";
+      });
+    </script>
+  </body>
+</html>
