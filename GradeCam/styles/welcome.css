@@ -1,0 +1,46 @@
+.welcome,
+.who-we-are{
+color: white;
+font-family: Barlow Condensed;
+text-align: center;
+margin-top: 150px;
+}
+
+.welcome {
+  font-size: 55px;
+  margin-bottom: 30px;
+}
+
+.who-we-are {
+  width: 900px;
+  font-size: 40px;
+  margin: auto;
+  line-height: 55px;
+}
+
+.navigation-bar {
+ background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.login,
+.signin  {
+color: maroon;
+font-family: Barlow Condensed;
+text-decoration: none;
+font-size: 38px;
+}
+
+.signin {
+  margin-left: 600px;
+}
+
+.login {
+  margin-left: 40px;
+}

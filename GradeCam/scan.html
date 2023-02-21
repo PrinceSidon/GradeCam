@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Cropping</title>
+  </head>
+  <body>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+    <button id="saveBtn">Save Image</button>
+    <script>
+      var canvas1 = document.getElementById('canvas1');
+      var canvas2 = document.getElementById('canvas2');
+
+      var context1 = canvas1.getContext('2d');
+      var context2 = canvas2.getContext('2d')
+
+      var imageObj1 = new Image();
+      var imageObj2 = new Image();
+
+      imageObj1.onload = function() {
+        var sourceX1 = 901;
+        var sourceY1 = 806;
+
+        var sourceWidth1 = 443;
+        var sourceHeight1 = 191;
+
+        var destWidth1 = sourceWidth1;
+        var destHeight1 = sourceHeight1; 
+
+        var destX1 = 0;
+        var destY1 = 0;
+
+        context1.drawImage(imageObj1, sourceX1, sourceY1, sourceWidth1, sourceHeight1, destX1, destY1, destWidth1, destHeight1);
+      };
+
+      imageObj2.onload = function() {
+        var sourceX2 = 84;
+        var sourceY2 = 1687;
+
+        var sourceWidth2 = 1258;
+        var sourceHeight2 = 170;
+
+        var destWidth2 = sourceWidth2;
+        var destHeight2 = sourceHeight2; 
+
+        var destX2 = 0;
+        var destY2 = 0;
+
+        context2.drawImage(imageObj2, sourceX2, sourceY2, sourceWidth2, sourceHeight2, destX2, destY2, destWidth2, destHeight2);
+      };
+
+      imageObj1.src = 'worksheet.png';
+      imageObj2.src = 'worksheet.png';
+
+      var saveBtn = document.getElementById('saveBtn');
+      saveBtn.addEventListener('click' , function() {
+        var dataURL = canvas1.toDataURL();
+        console.log(dataURL);
+        const image = new Image();
+        image.src = dataURL;
+
+        console.log("\n\n");
+
+        dataURL = canvas2.toDataURL();
+        console.log(dataURL); 
+        const image2 = new Image();
+        image2.src = dataURL;
+      });
+    </script>
+  </body>
+</html>
